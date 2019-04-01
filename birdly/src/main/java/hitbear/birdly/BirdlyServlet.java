@@ -15,6 +15,10 @@ public class BirdlyServlet extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	
+	MFileWriter fileWriter = new MFileWriter();
+	
+	
 	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -30,6 +34,12 @@ public class BirdlyServlet extends HttpServlet{
 		if(req.getParameter("client") != null) {
 			System.out.println(req.getParameter("client"));
 			//System.out.println(req.getReader().toString());
+		}
+		if(req.getParameter("information")!=null) {
+			fileWriter.writeToFile("/home/mh/Dokumente/information1.txt",req.getParameter("information").toString());
+		}
+		if(req.getParameter("information2")!=null) {
+			fileWriter.writeToFile("/home/mh/Dokumente/information2.txt",req.getParameter("information2").toString());
 		}
     }
 }
