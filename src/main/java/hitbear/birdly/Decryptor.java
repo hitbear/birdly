@@ -53,4 +53,20 @@ public class Decryptor {
     	
    }
     
+    public static String prepareDecryption(String data) throws IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException {
+    	if (data.contains("::") == true) {
+    		// split string
+    		StringBuilder stringBuilder = new StringBuilder();
+    		String[] parts = data.split("::");
+    		for (int i = 0; i< parts.length; i++) {
+    			stringBuilder.append(decrypt(parts[i]));
+    		}
+    		
+    		return stringBuilder.toString();
+    	}
+    	else {
+    		return decrypt(data);
+    	}
+    }
+    
 }

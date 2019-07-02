@@ -73,7 +73,7 @@ public class BirdlyServlet extends HttpServlet{
 				try {
 					//TODO: .replace(" ", "+"); is not nice...
 					encrypted_data = req.getParameter("information").toString().replace(" ", "+").replace("\n", "");
-					data = Decryptor.decrypt(encrypted_data);
+					data = Decryptor.prepareDecryption(encrypted_data);
 				} catch (InvalidKeyException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -100,7 +100,7 @@ public class BirdlyServlet extends HttpServlet{
 				try {
 					//TODO: .replace(" ", "+"); is not nice...
 					encrypted_data = req.getParameter("information2").toString().replace(" ", "+").replace("\n", "");
-					data = Decryptor.decrypt(encrypted_data);
+					data = Decryptor.prepareDecryption(encrypted_data);
 				} catch (InvalidKeyException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
