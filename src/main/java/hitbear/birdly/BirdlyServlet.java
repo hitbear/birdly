@@ -91,7 +91,7 @@ public class BirdlyServlet extends HttpServlet{
 					e.printStackTrace();
 				}
 				
-				fileWriter.writeToFile("/home/mh/Dokumente/information1.txt",data);
+				fileWriter.writeToFile("/home/mh/Dokumente/WifiP2PDeviceChangedInformation.txt",data);
 			}
 			if(req.getParameter("information2")!=null) {
 				
@@ -119,7 +119,7 @@ public class BirdlyServlet extends HttpServlet{
 				}
 				
 				
-				fileWriter.writeToFile("/home/mh/Dokumente/information2.txt",data);
+				fileWriter.writeToFile("/home/mh/Dokumente/NetworkStateChangedInformation.txt",data);
 			}
 		}
 
