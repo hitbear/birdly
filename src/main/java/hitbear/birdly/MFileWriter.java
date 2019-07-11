@@ -14,7 +14,7 @@ public class MFileWriter {
         	  
             // Open given file in append mode. 
             BufferedWriter out = new BufferedWriter( new FileWriter(fileName, true)); 
-            out.write(content); 
+            out.write(content+"\n---------------\n"); 
             out.close(); 
         } 
         catch (IOException e) { 
