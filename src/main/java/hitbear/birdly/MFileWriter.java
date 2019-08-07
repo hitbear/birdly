@@ -8,7 +8,7 @@ public class MFileWriter {
 
 	
 	
-	public void writeToFile(String fileName, String content) {
+	public int writeToFile(String fileName, String content) {
 		
         try { 
         	  
@@ -19,9 +19,11 @@ public class MFileWriter {
             //out.write(";::;");
            //out.write("\n---------------\n"); 
             out.close(); 
+            return 1;
         } 
         catch (IOException e) { 
             System.out.println("exception occoured" + e); 
+            return 0;
         } 
 	}
 }

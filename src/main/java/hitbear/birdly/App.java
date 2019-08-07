@@ -12,6 +12,10 @@ public class App {
         Server server = new Server(7070);
         ServletContextHandler handler = new ServletContextHandler(server, "/upload");
         handler.addServlet(BirdlyServlet.class, "/");
+        //if message is too long...
+        //server.setAttribute("org.eclipse.jetty.server.Request.maxFormContentSize", 1000000);
+        //10MB
+        handler.setMaxFormContentSize(10000000);
         server.start();
  
     }
